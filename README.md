@@ -48,11 +48,11 @@ Define `System1Solver` and `System2Solver` by creating custom classes with probl
 ```python
 class CustomSystem1Solver(sofai.System1Solver):
     def solve(self, problem):
-        # Define System 1 solving logic
-        return "solution1"
+        # Define System 1 solving logic and return solution and confidence
+        return 0.7,"solution1"
     
-    def confidence_estimate(self, solution):
-        # Estimate confidence for System 1's solution
+    def calculate_correctness(self, problem, solution):
+        # Estimate correctness for System 1's solution
         return 0.9
 
 class CustomSystem2Solver(sofai.System2Solver):
