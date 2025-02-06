@@ -1,46 +1,54 @@
 import matplotlib.pyplot as plt
-import numpy as np
 import json
+import numpy as np
 
 def plot_solver_activity(file_name):
-
     # Load data
-    with open("db/"+file_name, 'r') as f:
+    with open("db/" +file_name, 'r') as f:
         log_data = json.load(f)
-    # Preparing data
-    problem_numbers = {num for sublist in log_data.values() for num, sol in sublist}
-    problem_numbers = sorted(problem_numbers)  # Sort problem numbers to maintain order
 
-    # Initialize counts
-    total_counts = []
-    s1_counts = []
-    s2_counts = []
+    # Extract cases
+    case_data = log_data.get("cases", {})
 
-    # Count the occurrences for each system per problem
-    for num in problem_numbers:
-        total = sum(1 for sublist in log_data.values() for n, sol in sublist if n == num)
-        s1_count = sum(1 for n, sol in log_data['System1'] if n == num)
-        s2_count = sum(1 for n, sol in log_data['System2'] if n == num)
+    # Prepare lists
+    case_numbers = []
+    solving_times = []
+    systems = []
 
-        total_counts.append(total)
-        s1_counts.append(s1_count)
-        s2_counts.append(s2_count)
+    for case_number, case_info in case_data.items():
+        if not case_number.isdigit():
+            continue
+        case_numbers.append(int(case_number))
+        solving_times.append(case_info['solving_time'])
+        systems.append(case_info['system'])
 
-    # Plotting
-    bar_width = 0.25
-    r1 = np.arange(len(problem_numbers))
-    r2 = [x + bar_width for x in r1]
-    r3 = [x + bar_width for x in r2]
+    # Convert to NumPy arrays
+    case_numbers = np.array(case_numbers)
+    solving_times = np.array(solving_times)
+    systems = np.array(systems)
 
-    plt.bar(r1, total_counts, color='b', width=bar_width, edgecolor='grey', label='Total Problems')
-    plt.bar(r2, s1_counts, color='g', width=bar_width, edgecolor='grey', label='S1 Usage')
-    plt.bar(r3, s2_counts, color='r', width=bar_width, edgecolor='grey', label='S2 Usage')
+    # Ensure we have data
+    if len(case_numbers) == 0:
+        print("No valid case data found!")
+        return
 
-    plt.xlabel('Problem Number', fontweight='bold', fontsize=12)
-    plt.ylabel('Count', fontweight='bold', fontsize=12)
-    plt.xticks([r + bar_width for r in range(len(total_counts))], problem_numbers)
+    # Create a scatter plot for System 1 and System 2
+    plt.figure(figsize=(8, 6))
 
+    # Mask for filtering system types
+    system1_mask = (systems == 1)
+    system2_mask = (systems == 2)
+
+    # Scatter plot with different colors for systems
+    plt.scatter(case_numbers[system1_mask], solving_times[system1_mask], color='g', label='System 1')
+    plt.scatter(case_numbers[system2_mask], solving_times[system2_mask], color='r', label='System 2')
+
+    # Labels and title
+    plt.xlabel('Case Number', fontweight='bold', fontsize=12)
+    plt.ylabel('Solving Time', fontweight='bold', fontsize=12)
+    plt.title('Solving Time per Case')
     plt.legend()
-    plt.title("Problem Solving Activity")
-    plt.savefig("problem_solving_activity.png")
+    
+    # Save and show the plot
+    plt.savefig(file_name.replace("_experience.json","")+"_solver_activity.png")
     plt.show()
