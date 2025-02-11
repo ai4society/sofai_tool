@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sofai_tool"
+version = "0.1.0"
+description = "SOFAI - A planning and reasoning tool with System1 and System2 solvers."
+authors = [{ name = "Vishal Pallagani", email = "vishalp@email.sc.edu" }]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.10"
+
+dependencies = [
+    "annotated-types>=0.7.0",
+    "anyio>=4.8.0",
+    "certifi>=2024.12.14",
+    "contourpy>=1.3.1",
+    "cycler>=0.12.1",
+    "fonttools>=4.55.6",
+    "h11>=0.14.0",
+    "httpcore>=1.0.7",
+    "httpx>=0.28.1",
+    "idna>=3.10",
+    "kiwisolver>=1.4.8",
+    "matplotlib>=3.10.0",
+    "networkx>=3.4.2",
+    "numpy>=2.2.2",
+    "ollama>=0.4.7",
+    "packaging>=24.2",
+    "pillow>=11.1.0",
+    "pydantic>=2.10.6",
+    "pydantic_core>=2.27.2",
+    "pyparsing>=3.2.1",
+    "python-dateutil>=2.9.0.post0",
+    "sniffio>=1.3.1",
+    "typing_extensions>=4.12.2",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/sofai_tool"
