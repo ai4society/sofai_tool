@@ -1,6 +1,6 @@
 class Solver:
     def __init__(self):
-        self.correctness = None
+        self.correctness = 0
         self.confidence = None
-        self.solution = None
+        self.solution = "noSolution"
         self.running_time = None

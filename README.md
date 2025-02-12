@@ -41,6 +41,11 @@ The following examples demonstrate how to use the SOFAI Tool by importing the pa
 import sofai_tool as sofai
 ```
 
+<!--- We might want to include the virtual envirnment activation on Debian/Ubunutu
+python3 -m venv ~/py_envs
+source ~/py_envs/bin/activate
+-->
+
 ### 1. Define Custom Solvers
 
 Define `System1Solver` and `System2Solver` by creating custom classes with problem-solving and (for System 1) confidence estimation methods.

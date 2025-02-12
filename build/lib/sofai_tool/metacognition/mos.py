@@ -51,7 +51,7 @@ def createFolders(jsonFilename, new_run):
         f.write("{\n\"size_limit\": 1000,\n\"cases\":{\n}\n}")
         f.close
 
-def memorize_solution(system, name, confidence, elapsedTime, correctness, solution, timerComputation, difficulty, continue_solve=False, temp_solve=False):
+def memorize_solution(solver, system, name, timerComputation, difficulty, continue_solve=False, temp_solve=False):
     try:
         memory_file = open(experience_file)
     except:
@@ -76,15 +76,15 @@ def memorize_solution(system, name, confidence, elapsedTime, correctness, soluti
     data['cases'][str(index)]['name'] = name # how?
     data['cases'][str(index)]['difficulty'] = difficulty # how?
     data['cases'][str(index)]['system'] = system
-    data['cases'][str(index)]['confidence'] = confidence
-    data['cases'][str(index)]['correctness'] = correctness
-    data['cases'][str(index)]['solving_time'] = elapsedTime
+    data['cases'][str(index)]['confidence'] = solver.confidence
+    data['cases'][str(index)]['correctness'] = solver.correctness
+    data['cases'][str(index)]['solving_time'] = solver.running_time
     data['cases'][str(index)]['total_time'] = totalTIME
 
     #init,goal = getStates.States(problemFile) #reading initial and goal states from problem file
 
     data['cases'][str(index)]['problem'] = name+".pickle" # how?
-    data['cases'][str(index)]['solution'] = solution
+    data['cases'][str(index)]['solution'] = solver.solution
 
 
 
@@ -96,6 +96,13 @@ def memorize_solution(system, name, confidence, elapsedTime, correctness, soluti
     
     if continue_solve:
         return
+    
+    print(f"Solution found by System {system}!\
+            \n\tSOLUTION:{solver.solution}\
+            \n\tCORRECTNESS: {solver.correctness}\
+            \n\tSOLVER TIME: {solver.running_time}s\
+            \n\tSOFAI TIME: {totalTIME}s")
+
 
     #utilities.end_computation(name,timerComputation,True)
 
