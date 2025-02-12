@@ -180,6 +180,66 @@
                 "pick-up b3",
                 "stack b3 b2"
             ]
+        },
+        "10": {
+            "name": "/mnt/c/Users/fraano/Desktop/Repos/sofai_tool/sofai_instances/plan-sofai/problem.pddl--UNIQUEIDMERGER--/mnt/c/Users/fraano/Desktop/Repos/sofai_tool/sofai_instances/plan-sofai/domain.pddl",
+            "difficulty": 384,
+            "system": 2,
+            "confidence": 1.0,
+            "correctness": 1.0,
+            "solving_time": 1.5439543724060059,
+            "total_time": 16.027944564819336,
+            "problem": "/mnt/c/Users/fraano/Desktop/Repos/sofai_tool/sofai_instances/plan-sofai/problem.pddl--UNIQUEIDMERGER--/mnt/c/Users/fraano/Desktop/Repos/sofai_tool/sofai_instances/plan-sofai/domain.pddl.pickle",
+            "solution": [
+                "unstack b1 b4",
+                "stack b1 b2",
+                "unstack b4 b3",
+                "put-down b4",
+                "unstack b1 b2",
+                "stack b1 b4",
+                "pick-up b3",
+                "stack b3 b2"
+            ]
+        },
+        "11": {
+            "name": "/mnt/c/Users/fraano/Desktop/Repos/sofai_tool/sofai_instances/plan-sofai/problem.pddl--UNIQUEIDMERGER--/mnt/c/Users/fraano/Desktop/Repos/sofai_tool/sofai_instances/plan-sofai/domain.pddl",
+            "difficulty": 0,
+            "system": 2,
+            "confidence": 1.0,
+            "correctness": 1.0,
+            "solving_time": 0.719172477722168,
+            "total_time": 0.7236225605010986,
+            "problem": "/mnt/c/Users/fraano/Desktop/Repos/sofai_tool/sofai_instances/plan-sofai/problem.pddl--UNIQUEIDMERGER--/mnt/c/Users/fraano/Desktop/Repos/sofai_tool/sofai_instances/plan-sofai/domain.pddl.pickle",
+            "solution": [
+                "unstack b1 b4",
+                "stack b1 b2",
+                "unstack b4 b3",
+                "put-down b4",
+                "unstack b1 b2",
+                "stack b1 b4",
+                "pick-up b3",
+                "stack b3 b2"
+            ]
+        },
+        "12": {
+            "name": "/mnt/c/Users/fraano/Desktop/Repos/sofai_tool/sofai_instances/plan-sofai/problem.pddl--UNIQUEIDMERGER--/mnt/c/Users/fraano/Desktop/Repos/sofai_tool/sofai_instances/plan-sofai/domain.pddl",
+            "difficulty": 0,
+            "system": 2,
+            "confidence": 1.0,
+            "correctness": 1.0,
+            "solving_time": 0.8924129009246826,
+            "total_time": 0.8959810733795166,
+            "problem": "/mnt/c/Users/fraano/Desktop/Repos/sofai_tool/sofai_instances/plan-sofai/problem.pddl--UNIQUEIDMERGER--/mnt/c/Users/fraano/Desktop/Repos/sofai_tool/sofai_instances/plan-sofai/domain.pddl.pickle",
+            "solution": [
+                "unstack b1 b4",
+                "stack b1 b2",
+                "unstack b4 b3",
+                "put-down b4",
+                "unstack b1 b2",
+                "stack b1 b4",
+                "pick-up b3",
+                "stack b3 b2"
+            ]
         }
     }
 }
