@@ -198,9 +198,9 @@ def check_not(final_state, temp):
 def subgoal_completeness(goal, plan, domain, init_cond):
     final_state = init_cond.copy()
     # print(init_cond)
-    #print(f"\nDEBUG HERE with plan: {plan}\n")
-    #print(f"\nDEBUG HERE with init: {init_cond}\n")
-    #print(f"\nDEBUG HERE with goal: {goal}\n")
+    # print(f"\nDEBUG HERE with plan: {plan}\n")
+    # print(f"\nDEBUG HERE with init: {init_cond}\n")
+    # print(f"\nDEBUG HERE with goal: {goal}\n")
 
     for i in plan:
         # print(i)
@@ -259,8 +259,6 @@ def get_correctness(domain_path, plan_text, instance_path):
     with open(pf_problem_file, 'w') as file:
         file.write(data)
     ######################@TODO: DEBUG ROCKET SPECIFIC
-
-
     plan = read_plan(plan_text)
     #print(f"\nDEBUG HERE with plan: {plan}\n")
     goal = read_goal(pf_problem_file)

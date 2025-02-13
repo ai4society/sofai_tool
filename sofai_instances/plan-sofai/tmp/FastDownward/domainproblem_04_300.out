@@ -1,0 +1,2 @@
+Solution = pick-up b4, stack b4 b3, unstack b1 b2, put-down b1, pick-up b2, stack b2 b4, pick-up b1, stack b1 b2, 
+[t=0.013464s, 11056 KB] Search time: 0.001110s

@@ -48,7 +48,7 @@ class CustomSystem1Solver(sofai1.System1Solver):
         self.confidence = confidence
 
     
-    def calculate_correctness(self, problem):
+    def calculate_correctness(self, problem_id):
         if self.solution == "noSolution":
             return 0
 
@@ -63,7 +63,7 @@ class CustomSystem1Solver(sofai1.System1Solver):
         
         problem,domain=utilities_plan.split_names(problem_id)
 
-        self.correctness = SubgoalCompleteness.get_correctness(domain,problem)
+        self.correctness = SubgoalCompleteness.get_correctness(domain,self.solution,problem)
 
 class CustomSystem2Solver(sofai2.System2Solver):
     def solve(self, problem_id, time_limit):
@@ -116,8 +116,8 @@ def plan_solve(problem_id):
     system1_solver = CustomSystem1Solver()
     system2_solver = CustomSystem2Solver()
     
-    context_file="context.txt"
-    thresholds_file="thresholds.txt"
+    context_file="input/meta/context.txt"
+    thresholds_file="input/meta/thresholds.txt"
     experience_file = "plan_experience.json"
     new_run = False
     run_type = "sofai" # Possible values: "s1" "s2" "sofai"
@@ -125,10 +125,61 @@ def plan_solve(problem_id):
     meta.metacognition(problem_id, system1_solver, system2_solver, context_file, thresholds_file, experience_file, new_run, run_type)
     
 
-if __name__=="__main__":
-    problem_name = "/mnt/c/Users/fraano/Desktop/Repos/sofai_tool/sofai_instances/plan-sofai/problem.pddl"
-    domain_name = "/mnt/c/Users/fraano/Desktop/Repos/sofai_tool/sofai_instances/plan-sofai/domain.pddl"
+# Defining main function
+def plan_solve_batch(problem_folder):
+    # Instantiate solvers
+    system1_solver = CustomSystem1Solver()
+    system2_solver = CustomSystem2Solver()
+    
+    context_file="input/meta/context.txt"
+    thresholds_file="input/meta/thresholds.txt"
+    experience_file = "plan_batch_experience.json"
+    new_run = False
+    run_type = "sofai" # Possible values: "s1" "s2" "sofai"
+    
+    domain_list = utilities_plan.list_files_in_folder(problem_folder,"domain")
+    if len(domain_list) == 1:
+
+        problems_list = utilities_plan.list_files_in_folder(problem_folder,"instances")
+        if len(problems_list) == 0:
+            print(f"Could not find any problem file in '{problem_folder}/instances'.")
+            exit(1)
+
+        domain_name = domain_list[0]
+        for problem_name in problems_list:
+
+            problem_id = utilities_plan.unify_names(problem_name,domain_name)
+
+            print(f"\nSolving Problem ID: {problem_id}")
+
+            meta.metacognition(problem_id, system1_solver, system2_solver, context_file, thresholds_file, experience_file, new_run, run_type)
+            print(f"\tSystem 1 confidence {system1_solver.confidence} and corr {system1_solver.correctness}")
+
+
+    elif len(domain_list) == 0:
+        print(f"Could not find any domain file in '{problem_folder}/domain'.")
+        exit(1)
+    else:
+        print(f"Found multiple domain files in '{problem_folder}/domain'.")
+        exit(1)
+
+
+
+def solve_single():
+    problem_name = "/mnt/c/Users/fraano/Desktop/Repos/sofai_tool/sofai_instances/input/test/plan-sofai/problem.pddl"
+    domain_name = "/mnt/c/Users/fraano/Desktop/Repos/sofai_tool/sofai_instances/input/test/plan-sofai/domain.pddl"
     
     problem_id = utilities_plan.unify_names(problem_name,domain_name)
-    
     plan_solve(problem_id)
+
+
+def solve_batch():
+    
+    problem_folder = "input/blocksworld"
+    plan_solve_batch(problem_folder)
+
+
+if __name__=="__main__":
+    #solve_single()
+    solve_batch()
+    

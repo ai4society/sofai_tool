@@ -1,4 +1,5 @@
 import re
+import os
 
 '''Function that parses some basic values from utilities files (i.e., threshold and contex)'''
 def getVarFromFile(filename,varname):
@@ -116,3 +117,18 @@ def split_names(problem_id):
         return parts[0], parts[1]
     return problem_id, ""
 
+"""Iterates over files in the subfolder and return a list with their filenames with full paths if they have a .pddl extension."""
+def list_files_in_folder(files_path,subfolder):
+    ret_list = []
+    files_path = os.path.join(files_path, subfolder)
+    if not os.path.exists(files_path):
+        print(f"The '{files_path}' folder does not exist.")
+        return ret_list
+    
+    for root, _, files in os.walk(files_path):
+        for file in files:
+            if file.endswith(".pddl"):
+                file_path = os.path.join(root, file)
+                ret_list.append(file_path)
+    
+    return ret_list

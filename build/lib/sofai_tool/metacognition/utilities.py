@@ -33,4 +33,4 @@ def read_threshold(thresholdFile):
 '''Utility function that ends the computation'''
 def end_computation(problemId,timerComputation):
     print(f"Problem {problemId} could not be solved in {(time.time() - timerComputation)}ms")
-    sys.exit()
+    return

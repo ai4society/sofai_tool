@@ -82,7 +82,8 @@ import sofai_tool as sofai
 
 <!--- We might want to include the virtual envirnment activation on Debian/Ubunutu
 python3 -m venv ~/py_envs
-source ~/py_envs/bin/activate
+source ~/py_envs/bin/activate -- once created use this
+deactivate --- to exit
 -->
 
 ### 1. Define Custom Solvers
