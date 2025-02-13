@@ -95,7 +95,7 @@ def metacognition(problemId, system1_solver, system2_solver, context_file, thres
         else:
             M = 0
         if (system1_solver.confidence * (1-M) >= T3):
-            print("---------------HERE 1")
+            # print("---------------HERE 1")
             if not try_s1(problemId,system1_solver,correctness_threshold,timerSOFAI):
                 if not try_s2(problemId,system2_solver,correctness_threshold,timerSOFAI,time_limit_context):
                     utilities.end_computation(problemId, timerSOFAI)
@@ -113,7 +113,7 @@ def metacognition(problemId, system1_solver, system2_solver, context_file, thres
 
     ## If we think that there is not enough time to employ System-2, we check System-1 solution even if it has low confidence value
     if (estimated_cost_s2 > 1):
-        print("---------------HERE 2")
+        # print("---------------HERE 2")
         if not try_s1(problemId,system1_solver,correctness_threshold,timerSOFAI):
             if not try_s2(problemId,system2_solver,correctness_threshold,timerSOFAI,time_limit_context,estimated_difficulty_s2):
                 utilities.end_computation(problemId, timerSOFAI)
@@ -127,7 +127,7 @@ def metacognition(problemId, system1_solver, system2_solver, context_file, thres
         probability_s1 = (1-T3)*epsilon_s1
         r_value = random.random()
         if (probability_s1 > r_value):
-            print("---------------HERE 3")
+            # print("---------------HERE 3")
             if not try_s1(problemId,system1_solver,correctness_threshold,timerSOFAI):
                 if not try_s2(problemId,system2_solver,correctness_threshold,timerSOFAI,time_limit_context,estimated_difficulty_s2):
                     utilities.end_computation(problemId, timerSOFAI)
@@ -139,7 +139,7 @@ def metacognition(problemId, system1_solver, system2_solver, context_file, thres
                 system1_solver.calculate_correctness(problemId)
                 ## Here we check if we can improve on the System-1 results
             if (system1_solver.correctness >= correctness_threshold):
-                print("---------------HERE 4")
+                # print("---------------HERE 4")
                 if((1-(estimated_cost_s2 * (1-T3))) > (system1_solver.correctness*(1-M))):
                     if try_s2(problemId,system2_solver,correctness_threshold,timerSOFAI,time_limit_context,estimated_difficulty_s2):
                         return
@@ -151,7 +151,7 @@ def metacognition(problemId, system1_solver, system2_solver, context_file, thres
     ## We arbitrary set the extra time to be 50%
     flexibility_perc = 50
     if ((time.time() - timerSOFAI) >= (estimated_time_s2 - (float(estimated_time_s2)/100.0 * float(flexibility_perc)))):
-        print("---------------HERE 5")
+        # print("---------------HERE 5")
         if try_s2(problemId,system2_solver,correctness_threshold,timerSOFAI,time_limit_context,estimated_difficulty_s2):
             return
 

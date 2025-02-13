@@ -153,7 +153,7 @@ def plan_solve_batch(problem_folder):
             print(f"\nSolving Problem ID: {problem_id}")
 
             meta.metacognition(problem_id, system1_solver, system2_solver, context_file, thresholds_file, experience_file, new_run, run_type)
-            print(f"\tSystem 1 confidence {system1_solver.confidence} and corr {system1_solver.correctness}")
+            # print(f"\tSystem 1 confidence {system1_solver.confidence} and corr {system1_solver.correctness}")
 
 
     elif len(domain_list) == 0:
