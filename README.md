@@ -1,4 +1,4 @@
-# SOFAI Tool
+# SOFAI Tool (AAAI 2025)
 
 SOFAI Tool is a neurosymbolic system designed to integrate fast experience-based decision-making (System 1) with logical, deliberative processing (System 2) through a metacognition module. This package enables developers and researchers to easily instantiate, configure, and extend System 1 and System 2 solvers, log system activities, and visualize solver performance across a batch of problems.
 
