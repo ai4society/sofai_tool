@@ -4,7 +4,7 @@ SOFAI Tool is a neurosymbolic system designed to integrate fast experience-based
 
 ## Features
 
-- **Flexible Solver Architecture**: Define custom System 1 and System 2 solvers with confidence estimation and problem-solving methods.
+- **Flexible Solver Architecture**: Define custom System 1 and System 2 solvers with problem-solving methods.
 - **Metacognition Module**: A metacognition module that chooses between System 1 and System 2 based on confidence levels.
 - **Logging and Visualization**: Log solutions, confidence levels, and visualize the activities of System 1 and System 2 across multiple problems.
 
