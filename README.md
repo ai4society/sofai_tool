@@ -1,9 +1,9 @@
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+![Python Version](https://img.shields.io/badge/Python-3.10+-blue?logo=python)
 ![Last commit](https://img.shields.io/github/last-commit/ai4society/sofai_tool?color=orange)
 ![Open PRs](https://img.shields.io/github/issues-pr/ai4society/sofai_tool?color=blue)
 ![Issues](https://img.shields.io/github/issues/ai4society/sofai_tool?color=red)
 ![Repo Size](https://img.shields.io/github/repo-size/ai4society/sofai_tool?color=purple)
-![Python Version](https://img.shields.io/badge/Python-3.10+-blue?logo=python)
 [![GitHub stars](https://img.shields.io/github/stars/ai4society/sofai_tool.svg?style=social)](https://github.com/ai4society/sofai_tool/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/ai4society/sofai_tool.svg?style=social)](https://github.com/ai4society/sofai_tool/network/members)
 
