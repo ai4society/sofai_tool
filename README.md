@@ -196,9 +196,11 @@ SOFAI Tool provides a modular setup that enables users to adapt this system to b
 
 | Instance Name          | Google Colab Notebook |
 |------------------------|----------------------|
-| **Math-SOFAI**        | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/your_notebook_link_here) |
-| **Planning-SOFAI**    | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/your_notebook_link_here) |
-| **Custom-SOFAI**      | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/your_notebook_link_here) |
+| **Math-SOFAI (HelloWorld!)**        | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/your_notebook_link_here) |
+| **Plan-SOFAI**    | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/your_notebook_link_here) |
+| **Grid-SOFAI**      | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/your_notebook_link_here) |
+| **CSP-SOFAI (v1)**      | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/your_notebook_link_here) |
+| **CSP-SOFAI (v2)**      | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/your_notebook_link_here) |
 
 
 ## License
