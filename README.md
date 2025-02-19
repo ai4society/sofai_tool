@@ -12,7 +12,7 @@ SOFAI Tool is a neurosymbolic system designed to integrate fast experience-based
 
 ## Installation
 
-Follow the steps below to install the SOFAI Tool:
+Follow the steps below to install the SOFAI Tool locally:
 
 1. **Create a Conda environment** (Python 3.10 recommended):
    ```bash
