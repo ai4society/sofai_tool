@@ -130,7 +130,7 @@ def plan_solve(problem_id):
     thresholds_file="input/meta/thresholds.txt"
     experience_file = "plan_experience.json"
     new_run = False
-    run_type = "s1" # Possible values: "s1" "s2" "sofai"
+    run_type = "sofai" # Possible values: "s1" "s2" "sofai"
     
     meta.metacognition(problem_id, system1_solver, system2_solver, context_file, thresholds_file, experience_file, new_run, run_type)
     
