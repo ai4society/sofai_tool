@@ -8,7 +8,6 @@ import logging
 import ollama  # Assumed to be installed and configured
 import sofai_tool as sofai
 from sofai_tool.metacognition import metacognition_module as metam
-import utilities
 from sofai_tool.solvers import system1 as sofai1
 from sofai_tool.solvers import system2 as sofai2
 from sofai_tool.solvers import Solver
