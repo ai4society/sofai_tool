@@ -194,13 +194,13 @@ SOFAI Tool provides a modular setup that enables users to adapt this system to b
 
 ### Example Instances
 
-| Instance Name          | Google Colab Notebook |
-|------------------------|----------------------|
-| **Math-SOFAI (HelloWorld!)**        | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/your_notebook_link_here) |
-| **Plan-SOFAI**    | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/your_notebook_link_here) |
-| **Grid-SOFAI**      | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/your_notebook_link_here) |
-| **CSP-SOFAI (v1)**      | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/your_notebook_link_here) |
-| **CSP-SOFAI (v2)**      | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/your_notebook_link_here) |
+| Instance Name          | Notebook | Paper |
+|------------------------|----------|--------|
+| **Math-SOFAI (HelloWorld!)** | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/your_notebook_link_here) | [![arXiv](https://img.shields.io/badge/arXiv-2203.00000-B31B1B.svg)](https://arxiv.org/abs/your_arxiv_link_here) |
+| **Plan-SOFAI** | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/your_notebook_link_here) | [![arXiv](https://img.shields.io/badge/arXiv-2203.00000-B31B1B.svg)](https://arxiv.org/abs/your_arxiv_link_here) |
+| **Grid-SOFAI** | [![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?logo=github)](https://github.com/your_repo_link_here) | [![arXiv](https://img.shields.io/badge/arXiv-2203.00000-B31B1B.svg)](https://arxiv.org/abs/your_arxiv_link_here) |
+| **CSP-SOFAI (v1)** | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/your_notebook_link_here) | [![arXiv](https://img.shields.io/badge/arXiv-2203.00000-B31B1B.svg)](https://arxiv.org/abs/your_arxiv_link_here) |
+| **CSP-SOFAI (v2)** | [![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?logo=github)](https://github.com/your_repo_link_here) | [![arXiv](https://img.shields.io/badge/arXiv-2203.00000-B31B1B.svg)](https://arxiv.org/abs/your_arxiv_link_here) |
 
 
 ## License
