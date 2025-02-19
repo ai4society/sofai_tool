@@ -192,9 +192,14 @@ if __name__ == "__main__":
 
 SOFAI Tool provides a modular setup that enables users to adapt this system to build neurosymbolic architectures for problems of their choice. By implementing custom System 1 and System 2 solvers, you can model various types of decision-making systems. 
 
-### Example Applications
+### Example Instances
 
-[Graph Coloring, Planning, RL-based grid navigation notebooks go here]
+| Instance Name          | Google Colab Notebook |
+|------------------------|----------------------|
+| **Math-SOFAI**        | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/your_notebook_link_here) |
+| **Planning-SOFAI**    | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/your_notebook_link_here) |
+| **Custom-SOFAI**      | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/your_notebook_link_here) |
+
 
 ## License
 
