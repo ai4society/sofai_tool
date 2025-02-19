@@ -1,3 +1,23 @@
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+![Last commit](https://img.shields.io/github/last-commit/ai4society/sofai_tool?color=orange)
+![Open PRs](https://img.shields.io/github/issues-pr/ai4society/sofai_tool?color=blue)
+[![GitHub stars](https://img.shields.io/github/stars/ai4society/sofai_tool.svg?style=social)](https://github.com/ai4society/sofai_tool/stargazers)
+
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+![Last commit](https://img.shields.io/github/last-commit/ai4society/sofai_tool?color=orange)
+![Open PRs](https://img.shields.io/github/issues-pr/ai4society/sofai_tool?color=blue)
+![Issues](https://img.shields.io/github/issues/ai4society/sofai_tool?color=red)
+![Contributors](https://img.shields.io/github/contributors/ai4society/sofai_tool?color=yellow)
+![Repo Size](https://img.shields.io/github/repo-size/ai4society/sofai_tool?color=purple)
+![Python Version](https://img.shields.io/badge/Python-3.10+-blue?logo=python)
+[![GitHub stars](https://img.shields.io/github/stars/ai4society/sofai_tool.svg?style=social)](https://github.com/ai4society/sofai_tool/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/ai4society/sofai_tool.svg?style=social)](https://github.com/ai4society/sofai_tool/network/members)
+[![Downloads](https://img.shields.io/pypi/dm/sofai_tool?color=green&label=Downloads)](https://pypi.org/project/sofai-tool/)
+[![Discussions](https://img.shields.io/github/discussions/ai4society/sofai_tool?color=lightblue)](https://github.com/ai4society/sofai_tool/discussions)
+[![Code Quality](https://img.shields.io/lgtm/grade/python/github/ai4society/sofai_tool?label=Code%20Quality)](https://lgtm.com/projects/g/ai4society/sofai_tool)
+[![CI Status](https://github.com/ai4society/sofai_tool/actions/workflows/main.yml/badge.svg)](https://github.com/ai4society/sofai_tool/actions)
+
+
 # SOFAI Tool (AAAI 2025)
 
 SOFAI Tool is a neurosymbolic system designed to integrate fast experience-based decision-making (System 1) with logical, deliberative processing (System 2) through a metacognition module. This package enables developers and researchers to easily instantiate, configure, and extend System 1 and System 2 solvers, log system activities, and visualize solver performance across a batch of problems.
