@@ -46,14 +46,22 @@ If you want to modify the package and test changes, install it in **editable mod
 
 ```
 sofai_tool/
-├── solvers/                   # Contains System 1 and System 2 solver templates
-│   ├── system1.py             # System 1 solver base class
-│   ├── system2.py             # System 2 solver base class
-├── metacognition/             # Contains metacognition module
-│   └── metacognition_module.py
-├── utils/                     # Utility functions
-│   ├── logger.py              # Logging functions
-│   └── visualization.py       # Visualization functions
+├── sofai_tool/                # Core SOFAI tool package
+│   ├── metacognition/         # Contains metacognition module
+│   │   ├── metacognition_module.py
+│   │   ├── mos.py             # Model of Self
+│   │   ├── temp_thresholds.py # Temporary thresholds for decision-making
+│   │   └── utilities.py       # Metacognition-related utilities
+│   ├── solvers/               # Contains solver implementations
+│   │   ├── solver.py          # Generic solver base class
+│   │   ├── system1.py         # System 1 solver base class
+│   │   └── system2.py         # System 2 solver base class
+│   ├── utils/                 # Utility functions
+│   │   ├── logger.py          # Logging functions
+│   │   └── visualization.py   # Visualization functions
+├── sofai_instances/           # Predefined SOFAI instances for specific tasks
+│   ├── math-sofai/            # SOFAI instance for mathematical problems
+│   └── plan-sofai/            # SOFAI instance for planning problems
 └── README.md                  # Project documentation
 ```
 
