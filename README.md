@@ -12,13 +12,35 @@ SOFAI Tool is a neurosymbolic system designed to integrate fast experience-based
 
 ## Installation
 
-Clone the repository and install the required packages:
+Follow the steps below to install the SOFAI Tool:
 
-```bash
-git clone https://github.com/VishalPallagani/sofai_tool.git
-cd sofai_tool
-pip install -r requirements.txt
-```
+1. **Create a Conda environment** (Python 3.10 recommended):
+   ```bash
+   conda create --name sofai_env python=3.10 -y
+   conda activate sofai_env
+   ```
+
+2. **Clone the repository**:
+   ```bash
+   git clone https://github.com/ai4society/sofai_tool.git
+   cd sofai_tool
+   ```
+
+3. **Install dependencies**:
+   ```bash
+   pip install .
+   ```
+
+4. **Verify installation**:
+   ```bash
+   python -c "import sofai; print('SOFAI Tool installed successfully!')"
+   ```
+
+### Optional: Installing in Development Mode
+If you want to modify the package and test changes, install it in **editable mode**:
+   ```bash
+   pip install -e .
+   ```
 
 ## Directory Structure
 
