@@ -73,76 +73,119 @@ The following examples demonstrate how to use the SOFAI Tool by importing the pa
 import sofai_tool as sofai
 ```
 
-<!--- We might want to include the virtual envirnment activation on Debian/Ubunutu
-python3 -m venv ~/py_envs
-source ~/py_envs/bin/activate -- once created use this
-deactivate --- to exit
--->
-
-### 1. Define Custom Solvers
-
-Define `System1Solver` and `System2Solver` by creating custom classes with problem-solving and (for System 1) confidence estimation methods.
+### 1. Importing Required Modules
 
 ```python
-class CustomSystem1Solver(sofai.System1Solver):
+import random
+import time
+import pickle
+import os
+import logging
+import sofai_tool as sofai
+from sofai_tool.metacognition import metacognition_module as metam
+from sofai_tool.solvers import system1 as sofai1
+from sofai_tool.solvers import system2 as sofai2
+from sofai_tool.solvers import Solver
+```
+
+- `sofai_tool`: Core SOFAI framework.
+- `metacognition_module`: Handles solver selection logic.
+- `system1` & `system2`: Provide base classes for implementing solvers.
+
+### 2. Problem Generation
+
+```python
+def generate_problems(n_problems: int, complexity_list: list) -> list:
+    pass  # Modify to generate problems
+```
+
+- This function is a placeholder for generating a batch of problems.
+- `n_problems`: Number of problems to generate.
+- `complexity_list`: Specifies the complexity levels.
+
+### 3. Implementing System 1 Solver
+
+```python
+class CustomSystem1Solver(sofai1.System1Solver):
+    def __init__(self):
+        super().__init__()
+
     def solve(self, problem):
-        # Define System 1 solving logic and return solution and confidence
-        return 0.7,"solution1"
+        pass
+
+    def calculate_correctness(self, problem):
+        """
+        Evaluate correctness by comparing with the expected solution.
+        Modify this function based on the expected output format.
+        """
+        pass  # Modify with actual correctness computation
+```
+
+### 4. Implementing System 2 Solver
+
+```python
+class CustomSystem2Solver(sofai2.System2Solver):
+    def __init__(self):
+        super().__init__()
+
+    def solve(self, problem, time_limit: float):
+        pass
+
+    def calculate_correctness(self, problem):
+        pass  # Modify to compute correctness
     
-    def calculate_correctness(self, problem, solution):
-        # Estimate correctness for System 1's solution
-        return 0.9
-
-class CustomSystem2Solver(sofai.System2Solver):
-    def solve(self, problem):
-        # Define System 2 solving logic
-        return "solution2"
+    def estimate_difficulty(self, problem):
+        pass  # Modify to estimate difficulty
 ```
 
-### 2. Metacognition: Choosing the Appropriate System
-
-Use the `metacognition` function to select the solver based on System 1’s confidence level. If System 1’s confidence exceeds the threshold, its solution is chosen; otherwise, System 2 is used.
+### 5. Using Metacognition for Solver Arbitration
 
 ```python
-# Instantiate solvers
-system1_solver = CustomSystem1Solver()
-system2_solver = CustomSystem2Solver()
-
-# Define a problem
-problem = "Example problem"
-
-# Solve with System 1 and estimate confidence
-s1_solution = system1_solver.solve(problem)
-confidence = system1_solver.confidence_estimate(s1_solution)
-
-# Use metacognition to decide final solution
-final_solution = sofai.metacognition(s1_solution, confidence, problem, system2_solver, confidence_threshold=0.8)
-print("Final Solution:", final_solution)
+def plan_solve(problem, run_type) -> None:
+    """
+    Given a problem instance, instantiate both solvers, use metacognition to arbitrate if necessary,
+    solve the problem, and print out the results.
+    """
+    system1_solver = CustomSystem1Solver()
+    system2_solver = CustomSystem2Solver()
+    
+    context_file = "<name of context file>"
+    thresholds_file = "<name of thresholds file>"
+    experience_file = "<name of experience file>"
+    new_run = False
+    
+    # Use metacognition (if available) to decide the final solution.
+    metam.metacognition(
+        problem, system1_solver, system2_solver, 
+        context_file, thresholds_file, experience_file, new_run, run_type
+    )
 ```
 
-### 3. Logging Solutions and Confidence
-
-Use the logging utilities to record solutions and confidence levels for each system.
+### 6. Running the Experiment (Abstract Version)
 
 ```python
-# Log System 1 solution and confidence
-sofai.log_solution("System1", problem_id=1, solution=s1_solution)
-sofai.log_confidence("System1", problem_id=1, confidence=confidence)
-```
+if __name__ == "__main__":
+    # Generate a batch of problems with different complexity levels.
+    problems = generate_problems(
+        n_problems=5,         # Number of problems to generate
+        complexity_list=["easy", "medium", "hard"]  # Generic complexity levels
+    )
 
-### 4. Visualizing Solver Activity
+    experience_file = "<name of experience file>"
 
-Visualize the activity of System 1 and System 2 across multiple problems.
+    solving_modes = ["s1", "s2", "sofai"]  # Different execution modes
 
-```python
-# Sample log data format
-log_data = {
-    "System1": [(1, 'solution1'), (2, 'solution2')],
-    "System2": [(2, 'solution2_system2'), (3, 'solution3')]
-}
+    for mode in solving_modes:
+        print(f"Running experiments with mode: {mode.upper()}")
+        for problem in problems:
+            try:
+                print("="*20)
+                plan_solve(problem, run_type=mode)
+            except SystemExit:
+                continue
 
-# Plot activity
-sofai.plot_solver_activity(log_data)
+    # Visualize solver performance
+    sofai.utils.visualization.plot_solver_activity(experience_file)
 ```
 
 ## Creating Instances of SOFAI Tool
