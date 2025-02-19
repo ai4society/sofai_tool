@@ -138,7 +138,7 @@ class CustomSystem2Solver(sofai2.System2Solver):
         pass  # Modify to estimate difficulty
 ```
 
-### 5. Using Metacognition for Solver Arbitration
+### 5. Using Metacognition
 
 ```python
 def plan_solve(problem, run_type) -> None:
@@ -161,7 +161,7 @@ def plan_solve(problem, run_type) -> None:
     )
 ```
 
-### 6. Running the Experiment (Abstract Version)
+### 6. Running SOFAI Tool on the Problems
 
 ```python
 if __name__ == "__main__":
