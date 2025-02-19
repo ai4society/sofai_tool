@@ -27,7 +27,7 @@ def try_s1(problemId,system1_solver,correctness_threshold,timerSOFAI):
         system1_solver.calculate_correctness(problemId)
         if (system1_solver.correctness >= correctness_threshold):
             model_of_self.memorize_solution(system1_solver,systemONE, problemId, timerSOFAI, 0)
-            print(f"Solution found by System 1: {system1_solver.solution} with correctness {system1_solver.correctness}")
+            #print(f"Solution found by System 1: {system1_solver.solution} with correctness {system1_solver.correctness}")
             return True
         return False
     else:
@@ -68,14 +68,13 @@ def metacognition(problemId, system1_solver, system2_solver, context_file, thres
     if run_type == "s1":
         timerSOFAI = time.time()
         system1_solver.solve(problemId)
-        system1_solver.calculate_correctness(problemId)
-        model_of_self.memorize_solution(system1_solver,systemONE, problemId, timerSOFAI, 0)
+        if not try_s1(problemId,system1_solver,correctness_threshold,timerSOFAI):
+            utilities.end_computation(problemId, timerSOFAI)
         return
     if run_type == "s2":
         timerSOFAI = time.time()
-        system2_solver.solve(problemId,time_limit_context)
-        system2_solver.calculate_correctness(problemId)
-        model_of_self.memorize_solution(system2_solver,systemTWO, problemId, timerSOFAI, 0)
+        if not try_s2(problemId,system2_solver,correctness_threshold,timerSOFAI,time_limit_context):
+            utilities.end_computation(problemId, timerSOFAI)
         return
     
 

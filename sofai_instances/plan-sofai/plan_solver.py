@@ -1,4 +1,5 @@
 import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '1'
 import subprocess
 import traceback
 import logging
@@ -82,13 +83,19 @@ class CustomSystem2Solver(sofai2.System2Solver):
         result = subprocess.run(['bash','./'+ scripts_folder + 'FASTDOWNWARD_solve.sh', domainFileNoPath, domainPath, problemFileNoPath, problemPath, " " + str(int(time_limit))+"s"])
         resFilename = os.path.splitext(domainFileNoPath)[0]+os.path.splitext(problemFileNoPath)[0]+".out"
         solutionS2 = utilities_plan.readSolutionFromFile("tmp/FastDownward/" + resFilename,0)
-        #time = utilities_plan.readTimeFromFile("tmp/FastDownward/" + resFilename)
+        timerFD = utilities_plan.readTimeFromFile("tmp/FastDownward/" + resFilename)
         
         self.running_time = time.time() - timerSolving
 
         
+        if(timerFD == "TO" or solutionS2 == "noSolution"):
+        #return False, timeLimit, None
+        #print("Problem </pro>" + problem_name + "</> could not be solved by System </sys>" + str(systemTWO) + "</> using planner </pla>" + str(planner) +"</>.")
+            self.solution = "noSolution"
+        else:
+            self.solution = solutionS2
+
         self.confidence = 1.0
-        self.solution = solutionS2
     
     def estimate_difficulty(self,problem_id):
         problem,domain=utilities_plan.split_names(problem_id)
@@ -107,7 +114,10 @@ class CustomSystem2Solver(sofai2.System2Solver):
         return (diff_fluents*number_of_actions*pow(2, number_of_predicates))
 
     def calculate_correctness(self, problem):
-        self.correctness = 1.0
+        if self.solution == "noSolution":
+            self.correctness = 0.0
+        else:
+            self.correctness = 1.0
 
     
 # Defining main function
@@ -120,7 +130,7 @@ def plan_solve(problem_id):
     thresholds_file="input/meta/thresholds.txt"
     experience_file = "plan_experience.json"
     new_run = False
-    run_type = "sofai" # Possible values: "s1" "s2" "sofai"
+    run_type = "s1" # Possible values: "s1" "s2" "sofai"
     
     meta.metacognition(problem_id, system1_solver, system2_solver, context_file, thresholds_file, experience_file, new_run, run_type)
     
@@ -166,8 +176,10 @@ def plan_solve_batch(problem_folder):
 
 
 def solve_single():
-    problem_name = "/mnt/c/Users/fraano/Desktop/Repos/sofai_tool/sofai_instances/input/test/plan-sofai/problem.pddl"
-    domain_name = "/mnt/c/Users/fraano/Desktop/Repos/sofai_tool/sofai_instances/input/test/plan-sofai/domain.pddl"
+    problem_name = "input/test/problem.pddl"
+    domain_name = "input/test/domain.pddl"
+    #problem_name = os.path.abspath(problem_name_rel)
+    #domain_name = os.path.abspath(domain_name_rel)
     
     problem_id = utilities_plan.unify_names(problem_name,domain_name)
     plan_solve(problem_id)
@@ -180,6 +192,6 @@ def solve_batch():
 
 
 if __name__=="__main__":
-    #solve_single()
-    solve_batch()
+    solve_single()
+    #solve_batch()
     

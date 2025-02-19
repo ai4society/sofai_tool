@@ -8,8 +8,6 @@ device = 'cuda' if cuda.is_available() else 'cpu'
 
 #imports
 import torch
-import torch.nn.functional as F
-import re
 import Planners.New_PlansformerS1.prompt_gen as pg
 
 #imports
