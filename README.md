@@ -194,11 +194,11 @@ SOFAI Tool provides a modular setup that enables users to adapt this system to b
 
 | Instance Name          | Notebook/Source | Paper |
 |------------------------|----------------|--------|
-| **Math-SOFAI (HelloWorld!)** | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/your_notebook_link_here) | [![Paper](https://img.shields.io/badge/Paper-PDF-blue?logo=adobeacrobatreader)](https://your_paper_link_here) |
-| **Plan-SOFAI** | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/your_notebook_link_here) | [![Paper](https://img.shields.io/badge/Paper-PDF-blue?logo=adobeacrobatreader)](https://your_paper_link_here) |
+| **Math-SOFAI (HelloWorld!)** | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)]() | - |
+| **Plan-SOFAI** | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/your_notebook_link_here) | [![Paper](https://img.shields.io/badge/Paper-PDF-blue?logo=adobeacrobatreader)](https://openreview.net/pdf?id=ORAhay0H4x) |
 | **Grid-SOFAI** | [![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?logo=github)](https://github.com/aloreggia/sofai) | [![Paper](https://img.shields.io/badge/Paper-PDF-blue?logo=adobeacrobatreader)](https://ceur-ws.org/Vol-3212/paper12.pdf) |
-| **CSP-SOFAI (v1)** | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/your_notebook_link_here) | [![Paper](https://img.shields.io/badge/Paper-PDF-blue?logo=adobeacrobatreader)](https://your_paper_link_here) |
-| **CSP-SOFAI (v2)** | [![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?logo=github)](https://github.com/your_repo_link_here) | [![Paper](https://img.shields.io/badge/Paper-PDF-blue?logo=adobeacrobatreader)](https://your_paper_link_here) |
+| **CSP-SOFAI (v1)** | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/your_notebook_link_here) | [![Paper](https://img.shields.io/badge/Paper-PDF-blue?logo=adobeacrobatreader)](https://arxiv.org/pdf/2412.01752) |
+| **CSP-SOFAI (v2)** | [![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?logo=github)](https://github.com/your_repo_link_here) | [![Paper](https://img.shields.io/badge/Paper-PDF-blue?logo=adobeacrobatreader)](https://arxiv.org/pdf/2412.01752) |
 
 
 ## License
