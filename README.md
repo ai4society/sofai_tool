@@ -154,7 +154,7 @@ def plan_solve(problem, run_type) -> None:
     experience_file = "<name of experience file>"
     new_run = False
     
-    # Use metacognition (if available) to decide the final solution.
+    # Use metacognition to decide the final solution.
     metam.metacognition(
         problem, system1_solver, system2_solver, 
         context_file, thresholds_file, experience_file, new_run, run_type
