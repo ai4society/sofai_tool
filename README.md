@@ -197,7 +197,7 @@ if __name__ == "__main__":
     sofai.utils.visualization.plot_solver_activity(experience_file)
 ```
 
-## Instances using SOFAI Tool
+## Example Instances using SOFAI Tool
 
 SOFAI Tool provides a modular setup that enables users to adapt this system to build neurosymbolic architectures for problems of their choice. By implementing custom System 1 and System 2 solvers, you can model various types of decision-making systems. 
 
