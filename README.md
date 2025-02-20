@@ -209,6 +209,23 @@ SOFAI Tool provides a modular setup that enables users to adapt this system to b
 | **CSP-SOFAI (v1)** | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/your_notebook_link_here) | [![Paper](https://img.shields.io/badge/Paper-PDF-blue?logo=adobeacrobatreader)](https://arxiv.org/pdf/2412.01752) |
 | **CSP-SOFAI (v2)** | [![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?logo=github)](https://github.com/your_repo_link_here) | [![Paper](https://img.shields.io/badge/Paper-PDF-blue?logo=adobeacrobatreader)](https://arxiv.org/pdf/2412.01752) |
 
+##  Contributing to the Lab
+We encourage contributions and feedback.
+
+## Citation for the Lab
+
+If you wish to cite the lab titled "Harnessing Large Language Models for Planning: A Lab on Strategies for Success and Mitigation of Pitfalls" in your work, please cite it as follows:
+
+Pallagani, V., Loreggia, A., Fabiano, F., Srivastava, B., Rossi, F., & Horesh, L. (2025, February). SOFAI Lab: A Hands-On Guide to Building Neurosymbolic Systems with Metacognitive Control. In AAAI Conference on Artificial Intelligence. 
+
+```
+@inproceedings{pallagani2025sofailab,
+  title={SOFAI Lab: A Hands-On Guide to Building Neurosymbolic Systems with Metacognitive Control},
+  author={Pallagani, Vishal and Loreggia, Andrea and Fabiano, Francesco and Srivastava, Biplav and Rossi, Francesca and Horesh, Lior},
+  booktitle={AAAI Conference on Artificial Intelligence},
+  year={2025}
+}
+```
 
 ## License
 
