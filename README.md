@@ -23,7 +23,7 @@ SOFAI Tool is a neurosymbolic system designed to integrate fast experience-based
 
 Follow the steps below to install the SOFAI Tool locally:
 
-1. **Create a Conda environment** (Python 3.10 recommended):
+1. **Create a Conda environment** (Python >=3.10 recommended):
    ```bash
    conda create --name sofai_env python=3.10 -y
    conda activate sofai_env
@@ -207,7 +207,7 @@ SOFAI Tool provides a modular setup that enables users to adapt this system to b
 | **Plan-SOFAI** | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/your_notebook_link_here) | [![Paper](https://img.shields.io/badge/Paper-PDF-blue?logo=adobeacrobatreader)](https://openreview.net/pdf?id=ORAhay0H4x) |
 | **Grid-SOFAI** | [![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?logo=github)](https://github.com/aloreggia/sofai) | [![Paper](https://img.shields.io/badge/Paper-PDF-blue?logo=adobeacrobatreader)](https://ceur-ws.org/Vol-3212/paper12.pdf) |
 | **CSP-SOFAI (v1)** | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/your_notebook_link_here) | [![Paper](https://img.shields.io/badge/Paper-PDF-blue?logo=adobeacrobatreader)](https://arxiv.org/pdf/2412.01752) |
-| **CSP-SOFAI (v2)** | [![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?logo=github)](https://github.com/your_repo_link_here) | [![Paper](https://img.shields.io/badge/Paper-PDF-blue?logo=adobeacrobatreader)](https://arxiv.org/pdf/2412.01752) |
+| **CSP-SOFAI (v2)** | [![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?logo=github)](https://github.com/khvedant02/CSP-SOFAI-Instance) | [![Paper](https://img.shields.io/badge/Paper-PDF-blue?logo=adobeacrobatreader)](https://arxiv.org/pdf/2412.01752) |
 
 ##  Contributing to the Lab
 We encourage contributions and feedback.
