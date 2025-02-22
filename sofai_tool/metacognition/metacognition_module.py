@@ -73,12 +73,12 @@ def metacognition(problemId, system1_solver, system2_solver, context_file, thres
         timerSOFAI = time.time()
         system1_solver.solve(problemId)
         if not try_s1(problemId,system1_solver,correctness_threshold,timerSOFAI,run_type):
-            utilities.end_computation(problemId, timerSOFAI, run_type)
+            utilities.end_computation(problemId, timerSOFAI)
         return
     if run_type == "s2":
         timerSOFAI = time.time()
         if not try_s2(problemId,system2_solver,correctness_threshold,timerSOFAI,time_limit_context, -1, run_type):
-            utilities.end_computation(problemId, timerSOFAI, run_type)
+            utilities.end_computation(problemId, timerSOFAI)
         return
     
 
