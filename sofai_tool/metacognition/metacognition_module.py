@@ -100,7 +100,7 @@ def metacognition(problemId, system1_solver, system2_solver, context_file, thres
         if (system1_solver.confidence * (1-M) >= T3):
             # print("---------------HERE 1")
             if not try_s1(problemId,system1_solver,correctness_threshold,timerSOFAI,run_type):
-                if not try_s2(problemId,system2_solver,correctness_threshold,timerSOFAI,time_limit_context, run_type):
+                if not try_s2(problemId,system2_solver,correctness_threshold,timerSOFAI,time_limit_context,-1, run_type):
                     utilities.end_computation(problemId, timerSOFAI)
             return
 
