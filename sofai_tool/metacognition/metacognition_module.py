@@ -1,5 +1,3 @@
-# metacognition/metacognition_module.py
-
 from . import utilities
 from . import mos as model_of_self
 import sys
@@ -20,20 +18,23 @@ confidenceS1 = 0
 tested_s1 = False
 tested_s2 = False
 
-def try_s1(problemId,system1_solver,correctness_threshold,timerSOFAI):
+def try_s1(problemId,system1_solver,correctness_threshold,timerSOFAI, run_type):
     global tested_s1
     if not tested_s1:
         tested_s1 = True
         system1_solver.calculate_correctness(problemId)
         if (system1_solver.correctness >= correctness_threshold):
-            model_of_self.memorize_solution(system1_solver,systemONE, problemId, timerSOFAI, 0)
+            if run_type=='sofai':
+              model_of_self.memorize_solution(system1_solver,systemALL, problemId, timerSOFAI, 0)
             #print(f"Solution found by System 1: {system1_solver.solution} with correctness {system1_solver.correctness}")
+            else:
+              model_of_self.memorize_solution(system1_solver,systemONE, problemId, timerSOFAI, 0)
             return True
         return False
     else:
         return False
 
-def try_s2(problemId,system2_solver,correctness_threshold,timerSOFAI,time_limit_context,difficulty=-1.0):
+def try_s2(problemId,system2_solver,correctness_threshold,timerSOFAI,time_limit_context,difficulty, run_type):
     global tested_s2
     if not tested_s2:
         tested_s2 = True
@@ -44,7 +45,10 @@ def try_s2(problemId,system2_solver,correctness_threshold,timerSOFAI,time_limit_
         system2_solver.solve(problemId,time_limit_context - (time.time() - timerSOFAI))
         system2_solver.calculate_correctness(problemId)
         if (system2_solver.correctness >= correctness_threshold):
-            model_of_self.memorize_solution(system2_solver,systemTWO, problemId, timerSOFAI, difficulty)
+            if run_type=='sofai':
+              model_of_self.memorize_solution(system2_solver,systemALL, problemId, timerSOFAI, difficulty)
+            else:
+              model_of_self.memorize_solution(system2_solver,systemTWO, problemId, timerSOFAI, difficulty)
             return True
         return False
     else:
@@ -68,13 +72,13 @@ def metacognition(problemId, system1_solver, system2_solver, context_file, thres
     if run_type == "s1":
         timerSOFAI = time.time()
         system1_solver.solve(problemId)
-        if not try_s1(problemId,system1_solver,correctness_threshold,timerSOFAI):
-            utilities.end_computation(problemId, timerSOFAI)
+        if not try_s1(problemId,system1_solver,correctness_threshold,timerSOFAI,run_type):
+            utilities.end_computation(problemId, timerSOFAI, run_type)
         return
     if run_type == "s2":
         timerSOFAI = time.time()
-        if not try_s2(problemId,system2_solver,correctness_threshold,timerSOFAI,time_limit_context):
-            utilities.end_computation(problemId, timerSOFAI)
+        if not try_s2(problemId,system2_solver,correctness_threshold,timerSOFAI,time_limit_context, -1, run_type):
+            utilities.end_computation(problemId, timerSOFAI, run_type)
         return
     
 
@@ -95,8 +99,8 @@ def metacognition(problemId, system1_solver, system2_solver, context_file, thres
             M = 0
         if (system1_solver.confidence * (1-M) >= T3):
             # print("---------------HERE 1")
-            if not try_s1(problemId,system1_solver,correctness_threshold,timerSOFAI):
-                if not try_s2(problemId,system2_solver,correctness_threshold,timerSOFAI,time_limit_context):
+            if not try_s1(problemId,system1_solver,correctness_threshold,timerSOFAI,run_type):
+                if not try_s2(problemId,system2_solver,correctness_threshold,timerSOFAI,time_limit_context, run_type):
                     utilities.end_computation(problemId, timerSOFAI)
             return
 
@@ -113,8 +117,8 @@ def metacognition(problemId, system1_solver, system2_solver, context_file, thres
     ## If we think that there is not enough time to employ System-2, we check System-1 solution even if it has low confidence value
     if (estimated_cost_s2 > 1):
         # print("---------------HERE 2")
-        if not try_s1(problemId,system1_solver,correctness_threshold,timerSOFAI):
-            if not try_s2(problemId,system2_solver,correctness_threshold,timerSOFAI,time_limit_context,estimated_difficulty_s2):
+        if not try_s1(problemId,system1_solver,correctness_threshold,timerSOFAI,run_type):
+            if not try_s2(problemId,system2_solver,correctness_threshold,timerSOFAI,time_limit_context,estimated_difficulty_s2,run_type):
                 utilities.end_computation(problemId, timerSOFAI)
         return
 
@@ -127,8 +131,8 @@ def metacognition(problemId, system1_solver, system2_solver, context_file, thres
         r_value = random.random()
         if (probability_s1 > r_value):
             # print("---------------HERE 3")
-            if not try_s1(problemId,system1_solver,correctness_threshold,timerSOFAI):
-                if not try_s2(problemId,system2_solver,correctness_threshold,timerSOFAI,time_limit_context,estimated_difficulty_s2):
+            if not try_s1(problemId,system1_solver,correctness_threshold,timerSOFAI,run_type):
+                if not try_s2(problemId,system2_solver,correctness_threshold,timerSOFAI,time_limit_context,estimated_difficulty_s2,run_type):
                     utilities.end_computation(problemId, timerSOFAI)
             return
         
@@ -140,18 +144,18 @@ def metacognition(problemId, system1_solver, system2_solver, context_file, thres
             if (system1_solver.correctness >= correctness_threshold):
                 # print("---------------HERE 4")
                 if((1-(estimated_cost_s2 * (1-T3))) > (system1_solver.correctness*(1-M))):
-                    if try_s2(problemId,system2_solver,correctness_threshold,timerSOFAI,time_limit_context,estimated_difficulty_s2):
+                    if try_s2(problemId,system2_solver,correctness_threshold,timerSOFAI,time_limit_context,estimated_difficulty_s2,run_type):
                         return
      
                 #If we exit from try_s2 then no solution is found
-                model_of_self.memorize_solution(system1_solver,systemONE, problemId, timerSOFAI, estimated_difficulty_s2)
+                model_of_self.memorize_solution(system1_solver,systemALL, problemId, timerSOFAI, estimated_difficulty_s2)
                 return
     ### Finally we run System-2 only if the available time is within reasonable distance w.r.t. the time we think that the System-2 is goin to take 
     ## We arbitrary set the extra time to be 50%
     flexibility_perc = 50
     if ((time.time() - timerSOFAI) >= (estimated_time_s2 - (float(estimated_time_s2)/100.0 * float(flexibility_perc)))):
         # print("---------------HERE 5")
-        if try_s2(problemId,system2_solver,correctness_threshold,timerSOFAI,time_limit_context,estimated_difficulty_s2):
+        if try_s2(problemId,system2_solver,correctness_threshold,timerSOFAI,time_limit_context,estimated_difficulty_s2,run_type):
             return
 
     utilities.end_computation(problemId, timerSOFAI) # it is going to this one at the end, means it is not going inside any if loop above!, not directly, none of the if loop conditions are getting true!
