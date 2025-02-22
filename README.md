@@ -203,7 +203,7 @@ SOFAI Tool provides a modular setup that enables users to adapt this system to b
 
 | Instance Name          | Notebook/Source | Paper |
 |------------------------|----------------|--------|
-| **Math-SOFAI (HelloWorld!)** | [![Open in Colab](https://colab.research.google.com/drive/1mUGW0pDVxqiGkPZJ96Ucc55LBEAbDJVl?usp=sharing)]() | - |
+| **Math-SOFAI (HelloWorld!)** | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1mUGW0pDVxqiGkPZJ96Ucc55LBEAbDJVl?usp=sharing) | - |
 | **Plan-SOFAI** | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1uHqCns7ztxLEMFL4PWSWMlpkrqywtnVu?usp=sharing) | [![Paper](https://img.shields.io/badge/Paper-PDF-blue?logo=adobeacrobatreader)](https://openreview.net/pdf?id=ORAhay0H4x) |
 | **Grid-SOFAI** | [![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?logo=github)](https://github.com/aloreggia/sofai) | [![Paper](https://img.shields.io/badge/Paper-PDF-blue?logo=adobeacrobatreader)](https://ceur-ws.org/Vol-3212/paper12.pdf) |
 | **CSP-SOFAI (v1)** | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/your_notebook_link_here) | [![Paper](https://img.shields.io/badge/Paper-PDF-blue?logo=adobeacrobatreader)](https://arxiv.org/pdf/2412.01752) |
