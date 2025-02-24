@@ -201,13 +201,14 @@ if __name__ == "__main__":
 
 SOFAI Tool provides a modular setup that enables users to adapt this system to build neurosymbolic architectures for problems of their choice. By implementing custom System 1 and System 2 solvers, you can model various types of decision-making systems. 
 
-| Instance Name          | Notebook/Source | Paper |
-|------------------------|----------------|--------|
-| **Math-SOFAI (HelloWorld!)** | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1mUGW0pDVxqiGkPZJ96Ucc55LBEAbDJVl?usp=sharing) | - |
-| **Plan-SOFAI** | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1uHqCns7ztxLEMFL4PWSWMlpkrqywtnVu?usp=sharing) | [![Paper](https://img.shields.io/badge/Paper-PDF-blue?logo=adobeacrobatreader)](https://openreview.net/pdf?id=ORAhay0H4x) |
-| **Grid-SOFAI** | [![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?logo=github)](https://github.com/aloreggia/sofai) | [![Paper](https://img.shields.io/badge/Paper-PDF-blue?logo=adobeacrobatreader)](https://ceur-ws.org/Vol-3212/paper12.pdf) |
-| **CSP-SOFAI (v1)** | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/your_notebook_link_here) | [![Paper](https://img.shields.io/badge/Paper-PDF-blue?logo=adobeacrobatreader)](https://arxiv.org/pdf/2412.01752) |
-| **CSP-SOFAI (v2)** | [![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?logo=github)](https://github.com/khvedant02/CSP-SOFAI-Instance) | [![Paper](https://img.shields.io/badge/Paper-PDF-blue?logo=adobeacrobatreader)](https://arxiv.org/pdf/2412.01752) |
+| Instance Name          | Notebook/Source | Paper | Illust. Behavior |
+|------------------------|----------------|--------|------------------|
+| **Math-SOFAI (HelloWorld!)** | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1mUGW0pDVxqiGkPZJ96Ucc55LBEAbDJVl?usp=sharing) | - | [![Graph](https://img.shields.io/badge/Image-Link-lightgrey?logo=googlephotos)]() |
+| **Plan-SOFAI** | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1uHqCns7ztxLEMFL4PWSWMlpkrqywtnVu?usp=sharing) | [![Paper](https://img.shields.io/badge/Paper-PDF-blue?logo=adobeacrobatreader)](https://openreview.net/pdf?id=ORAhay0H4x) | [![Graph](https://img.shields.io/badge/Image-Link-lightgrey?logo=googlephotos)]() |
+| **Grid-SOFAI** | [![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?logo=github)](https://github.com/aloreggia/sofai) | [![Paper](https://img.shields.io/badge/Paper-PDF-blue?logo=adobeacrobatreader)](https://ceur-ws.org/Vol-3212/paper12.pdf) | [![Graph](https://img.shields.io/badge/Image-Link-lightgrey?logo=googlephotos)]() |
+| **CSP-SOFAI (v1)** | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/your_notebook_link_here) | [![Paper](https://img.shields.io/badge/Paper-PDF-blue?logo=adobeacrobatreader)](https://arxiv.org/pdf/2412.01752) | [![Graph](https://img.shields.io/badge/Image-Link-lightgrey?logo=googlephotos)]() |
+| **CSP-SOFAI (v2)** | [![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?logo=github)](https://github.com/khvedant02/CSP-SOFAI-Instance) | [![Paper](https://img.shields.io/badge/Paper-PDF-blue?logo=adobeacrobatreader)](https://arxiv.org/pdf/2412.01752) | [![Graph](https://img.shields.io/badge/Image-Link-lightgrey?logo=googlephotos)]() |
+
 
 ##  Contributing to the Lab
 We encourage contributions and feedback.
