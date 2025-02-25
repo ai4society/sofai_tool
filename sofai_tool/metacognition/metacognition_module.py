@@ -106,8 +106,8 @@ def metacognition(problemId, system1_solver, system2_solver, context_file, thres
 
     ''' SYSTEM-2 METACOGNITIVE MODULE'''
     estimated_difficulty_s2 = system2_solver.estimate_difficulty(problemId)
-    estimated_time_s2 = model_of_self.estimate_time_consumption(problemId, estimated_difficulty_s2) #Look at function estimateTimeCons(planner,difficulty): of previous arch
-    estimated_cost_s2 = sys.maxsize # check why is this here?
+    estimated_time_s2 = model_of_self.estimate_time_consumption(problemId, estimated_difficulty_s2)
+    estimated_cost_s2 = sys.maxsize 
 
     ## We check if the estimated time is enough to solve the problem
     remaining_time = time_limit_context - (time.time() - timerSOFAI)
