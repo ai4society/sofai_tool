@@ -209,6 +209,17 @@ SOFAI Tool provides a modular setup that enables users to adapt this system to b
 | **CSP-SOFAI (v1)** | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/your_notebook_link_here) | [![Paper](https://img.shields.io/badge/Paper-PDF-blue?logo=adobeacrobatreader)](https://arxiv.org/pdf/2412.01752) | - |
 | **CSP-SOFAI (v2)** | [![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?logo=github)](https://github.com/khvedant02/CSP-SOFAI-Instance) | [![Paper](https://img.shields.io/badge/Paper-PDF-blue?logo=adobeacrobatreader)](https://arxiv.org/pdf/2412.01752) | - |
 
+## References
+
+| #  | Paper Title | Link |
+|----|------------|------|
+| 1  | **Thinking Fast and Slow in AI** | [🔗](https://ojs.aaai.org/index.php/AAAI/article/view/17765) |
+| 2  | **Thinking Fast and Slow in AI: The Role of Metacognition** | [🔗](https://arxiv.org/pdf/2110.01834v1) |
+| 3  | **Plan-SOFAI: A Neuro-Symbolic Planning Architecture** | [🔗](https://openreview.net/pdf?id=ORAhay0H4x) |
+| 4  | **On the Prospects of Incorporating Large Language Models (LLMs) in Automated Planning and Scheduling (APS)** | [🔗](https://arxiv.org/abs/2401.02500) |
+
+For more publications related to SOFAI, visit the [SOFAI Publications Page](https://sites.google.com/view/sofai/publications).
+
 
 ##  Contributing to the Lab
 We encourage contributions and feedback.
