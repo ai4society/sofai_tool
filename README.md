@@ -201,7 +201,7 @@ if __name__ == "__main__":
 
 SOFAI Tool provides a modular setup that enables users to adapt this system to build neurosymbolic architectures for problems of their choice. By implementing custom System 1 and System 2 solvers, you can model various types of decision-making systems. 
 
-| Instance Name          | Notebook/Source | Paper | Illust. Behavior |
+| Instance Name          | Notebook/Source | Paper | Illust. Behavior (from the papers) |
 |------------------------|----------------|--------|------------------|
 | **Math-SOFAI (HelloWorld!)** | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1mUGW0pDVxqiGkPZJ96Ucc55LBEAbDJVl?usp=sharing) | - | - |
 | **Plan-SOFAI** | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1uHqCns7ztxLEMFL4PWSWMlpkrqywtnVu?usp=sharing) | [![Paper](https://img.shields.io/badge/Paper-PDF-blue?logo=adobeacrobatreader)](https://openreview.net/pdf?id=ORAhay0H4x) | Plan-SOFAI is 75% faster than FastDownward, a classical planner with 98% valid plans and 1.13% trade-off in optimality (Table 2 on pg 8 of the paper) |
